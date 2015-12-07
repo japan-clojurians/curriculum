@@ -1,6 +1,5 @@
 (defproject todo-clj "0.1.0"
   :description "Clojure ワークショップの課題用 TODO アプリ"
-  :url "http://example.com/FIXME"
   :license {:name "Creative Commons Attribution 4.0 International License"
             :url "http://creativecommons.org/licenses/by/4.0/deed.en_US"}
   :source-paths ["src" "src-cljc"]
@@ -13,6 +12,7 @@
                  [honeysql "0.6.2"] ;; SQL DSL
                  [environ "1.0.1"] ;; 環境変数管理
                  [com.taoensso/timbre "4.1.4"] ;; ロギング
+                 [clj-liquibase "0.6.0"] ;; マイグレーション
 
                  ;; ユーティリティ
                  [potemkin "0.4.1"]
@@ -20,15 +20,20 @@
                  [metosin/ring-http-response "0.6.5"]
                  [org.clojure/tools.namespace "0.2.11"]]
   :plugins [[lein-environ "1.0.1"]]
+  :uberjar-name "todo-clj.jar"
 
   :profiles
   {:uberjar
-   {:dependencies [[org.postgresql/postgresql "9.4-1205-jdbc42"]]}
+   {:dependencies [[org.postgresql/postgresql "9.4-1205-jdbc42"]]
+    :aot :all
+    :main todo-clj.main}
 
    :dev
-   {:dependencies [[ring/ring-devel "1.4.0"] ;; 開発用ミドルウェア
+   {:source-paths ["env/dev/clj"]
+    :dependencies [[ring/ring-devel "1.4.0"] ;; 開発用ミドルウェア
                    [prone "0.8.2"] ;; Better Error
-                   [org.xerial/sqlite-jdbc "3.8.11.2"]]
+                   [com.h2database/h2 "1.4.190"]]
     :env {:dev true
-          :db {:subprotocol "sqlite"
-               :subname "todo-clj.db"}}}})
+          :db {:classname "org.h2.Driver"
+               :subprotocol "h2:file"
+               :subname "./db/todo-clj"}}}})

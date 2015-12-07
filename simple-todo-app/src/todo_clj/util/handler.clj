@@ -11,6 +11,10 @@
        (map second)
        (filter ring-handler?)))
 
+(def ^{:doc "ring-handlers 関数と同じだがメモ化する点が異なる(プロダクション環境で使うもの)"}
+  memoized-ring-handlers
+  (memoize ring-handlers))
+
 (defmacro defhandler
   "Ring ハンドラーを作成するためのマクロ"
   [name tag args & body]

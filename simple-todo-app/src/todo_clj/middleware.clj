@@ -2,8 +2,7 @@
   (:require [environ.core :refer [env]]
             [immutant.internal.util :as iu]
             [ring.middleware.defaults :as defaults]
-            [ring.middleware.http-response :as http-response]
-            [todo-clj.middleware.resopnse :as response]))
+            [ring.middleware.http-response :as http-response]))
 
 (defn wrap-dev
   "開発環境のみしか使わないミドルウェアをココで動的に `require` するようにしている"

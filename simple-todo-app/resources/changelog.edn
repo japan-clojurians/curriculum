@@ -1,0 +1,22 @@
+{:database-change-log
+ [{:change-set
+   {:id 1
+    :author "yourname"
+    :changes
+    [{:create-table
+      {:table-name :todo
+       :columns
+       [{:column {:name :id :type :int :auto-increment true :constraints {:primary-key? true :nullable? false}}}
+        {:column {:name :title :type :varchar :constraints {:nullable? false}}}]}}]}}
+
+  ;; {:change-set
+  ;;  {:id 2
+  ;;   :author "yourname"
+  ;;   :changes
+  ;;   [{:create-table
+  ;;     {:table-name :member
+  ;;      :columns
+  ;;      [{:column {:name :id :type :int :auto-increment true :constraints {:primary-key? true :nullable? false}}}
+  ;;       {:column {:name :login-name :type :varchar :constraints {:nullable? false}}}
+  ;;       {:column {:name :password :type :varchar :constraints {:nullable? false}}}]}}]}}
+  ]}
