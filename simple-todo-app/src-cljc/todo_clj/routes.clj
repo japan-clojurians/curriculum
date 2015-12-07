@@ -2,5 +2,6 @@
 
 (def main
   ["/" {"" :home
-        "todo" {"" :todo-index}
+        "todo" {"" :todo-index
+                ["/" [#"\d+" :id]] :todo-show}
         true :not-found}])

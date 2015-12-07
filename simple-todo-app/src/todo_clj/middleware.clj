@@ -2,7 +2,8 @@
   (:require [environ.core :refer [env]]
             [immutant.internal.util :as iu]
             [ring.middleware.defaults :as defaults]
-            [ring.middleware.http-response :as http-response]))
+            [todo-clj.middleware.http-response :as http-response]
+            [todo-clj.middleware.trailing-slash :as trailing-slash]))
 
 (defn wrap-dev
   "開発環境のみしか使わないミドルウェアをココで動的に `require` するようにしている"
@@ -23,4 +24,5 @@
   (-> handler
       http-response/wrap-http-response
       (defaults/wrap-defaults #'defaults/site-defaults)
+      trailing-slash/wrap-trailing-slash
       (wrap wrap-dev (:dev env))))

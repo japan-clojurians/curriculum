@@ -25,8 +25,9 @@
   (request [k req ctx]
     ;; `todo-clj.util.handler/defhandler` 経由で
     ;; 定義したハンドラーをキーワードから探し出して実行する
-    (let [f (match-handler k)]
-      (f req))))
+    (if-let [f (match-handler k)]
+      (f req)
+      (res/not-found!))))
 
 (def app
   (middleware-set

@@ -9,3 +9,10 @@
     (-> (view/todo-index req todo-list)
         res/ok
         res/html)))
+
+(defhandler todo-show :todo-show [req]
+  (let [id (Long/parseLong (get-in req [:params :id]))
+        todo (first (model/find-todo [:= :id id]))]
+    (-> (view/todo-show req todo)
+        res/ok
+        res/html)))
