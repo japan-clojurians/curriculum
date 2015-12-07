@@ -5,7 +5,7 @@
 Clojure に慣れた人は次の問題に挑戦してみましょう。
 
 * FibBuzz
-  https://ja.wikipedia.org/wiki/Fizz_Buzz
+  http://blog.sorah.jp/2011/10/12/fibbuzz
 * N クイーン問題
   https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%A4%E3%83%88%E3%83%BB%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3
 * 文字列を先頭から見て同じところまで除去
