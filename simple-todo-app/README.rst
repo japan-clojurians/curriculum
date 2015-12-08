@@ -4,10 +4,63 @@
 
 簡単な TODO アプリを実装しましょう。このプロジェクトでは既に Web アプリケーション開発で必要となるであろう機能が全てではありませんが実装されています。また開発時のみ有効になるような便利な機能も組み合わせてあります。
 
+プロジェクト構成
+================
+
+.. sourcecode:: shell
+
+  ├── dev-resources
+  ├── env
+  │   └── dev
+  │       └── clj
+  │           └── user.clj ;; 開発時に使う便利な関数が幾つか定義されています
+  ├── Procfile ;; Heroku にデプロイするときに使います
+  ├── project.clj ;; プロジェクトの構成管理ファイル
+  ├── README.rst ;; このファイルです
+  ├── resources
+  │   ├── changelog.edn ;; マイグレーションのデータ
+  │   └── public
+  │       ├── css ;; スタイルシート
+  │       │   └── style.css
+  │       └── js ;; JavaScript
+  │           └── main.js
+  ├── src
+  │   └── todo_clj
+  │       ├── core.clj ;; アプリケーションの核となるネームスペース
+  │       ├── db.clj ;; データベース関連の処理が記述されている
+  │       ├── handler ;; ハンドラーはこの下のネームスペースで定義します
+  │       │   ├── main.clj
+  │       │   └── todo.clj
+  │       ├── main.clj ;; Uberjar して Executable Jar を作ったときのエントリーポイント
+  │       ├── middleware ;; ユーザー定義のミドルウェア
+  │       │   ├── http_response.clj
+  │       │   └── trailing_slash.clj
+  │       ├── middleware.clj ;; 幾つかのミドルウェアをまとめたネームスペース
+  │       ├── migration.clj ;; マイグレーション用の関数があるネームスペース
+  │       ├── model ;; データベースとやりとりをするネームスペース
+  │       │   └── todo.clj
+  │       ├── server.clj ;; サーバーを起動/停止させる関数があるネームスペース
+  │       ├── util ;; ユーティリティ
+  │       │   ├── datasource.clj
+  │       │   ├── handler.clj
+  │       │   ├── namespace.clj
+  │       │   └── response.clj
+  │       └── view ;; ビューを定義するネームスペース
+  │           ├── layout.clj
+  │           ├── main.clj
+  │           └── todo.clj
+  ├── src-cljc ;; Clojure/ClojureScript の両方から使えるネームスペース
+  │   └── todo_clj
+  │       ├── routes.clj ;; ルート定義
+  │       └── routing.cljc ;; ルーティングに関係するユーティリティ
+  └── test ;; テストを置くところ
+       └── todo_clj
+           └── core_test.clj
+
 課題
 ====
 
-* TODO の新規追加/更新/削除などを実装する
+* TODO の新規追加/更新/削除出来るようにする
 * ユーザーを追加出来るようにする
 * ユーザー認証を実装する
 
