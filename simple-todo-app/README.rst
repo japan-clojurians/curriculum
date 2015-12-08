@@ -125,7 +125,7 @@
                                "/:id" :user-show}}           ;; /settings/user/:id :id はプレースホルダ
           true :not-found}])
 
-このように書くことが出来ますが、詳しくは `bidi <https://github.com/juxt/bidi>`_ の README を参照してください。また、ルーティングを修正した場合は ``todo-clj.core/app`` を再評価するか ``todo-clj.core`` ネームスペースをファイルごと REPL 上へとロードしてください(ルーティングを書き換えたときは ``todo-clj.core/app`` をなんらかの方法で評価してください)。
+詳しくは `bidi <https://github.com/juxt/bidi>`_ の README を参照してください。また、ルーティングを修正した場合は ``todo-clj.core/app`` を再評価するか ``todo-clj.core`` ネームスペースをファイルごと REPL 上へとロードしてください(ルーティングを書き換えたときは ``todo-clj.core/app`` をなんらかの方法で評価してする必要があります)。
 
 ハンドラーを増やしたい
 ----------------------
@@ -171,7 +171,7 @@
               (sql/format :params [todo-id])))
   ;; => ["SELECT * FROM todo WHERE id = ?" 10] ;; prepared statement
 
-これさえ押さえていれば ``todo-clj.model.todo`` ネームスペースを参考に新しい関数は書けるかもしれません。
+これさえ押さえていれば ``todo-clj.model.todo`` ネームスペースを参考に新しい関数は書けると思います。
 
 画面のレイアウトを変更したい
 ----------------------------
