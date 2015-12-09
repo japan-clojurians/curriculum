@@ -1,3 +1,6 @@
+;;; Copyright (c) 2013 Yoshinori Kohyama.
+;;; Distributed under the BSD 3-Clause License.
+;;; You must not remove this notice, or any other, from this software.
 (ns puyo-clj.core
   (:require [clojure.set :refer [union]]
             [clojure.string :as string]))

@@ -1,7 +1,9 @@
+;;; Copyright (c) 2013 Yoshinori Kohyama.
+;;; Distributed under the BSD 3-Clause License.
+;;; You must not remove this notice, or any other, from this software.
 (ns puyo-clj.core-test
   (:require [clojure.test :refer :all]
             [puyo-clj.core :as p]))
-
 
 (deftest fall-one-test
   (are [b s a] (= (#'p/fall-one b s) a)
