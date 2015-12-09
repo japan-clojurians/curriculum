@@ -42,7 +42,7 @@
 License
 =======
 
-Copyright (c) 2013 Ayato Nishimura. Distributed under the BSD 3-Clause License.
+Copyright (c) 2015 Ayato Nishimura. Distributed under the BSD 3-Clause License.
 
 Original source code
 --------------------
