@@ -34,24 +34,26 @@ Clojure ではプロトコルとマルチメソッドという機能で他の言
 プロトコルによるポリモーフィズム
 ================================
 
-user> (defprotocol CoerceLong
-        (->long [x] "Long に強制変換するプロトコル"))
-CoerceLong
-user> (extend-protocol CoerceLong ;; 既存の Java のクラスをプロトコルで拡張してみる
-        java.lang.String
-        (->long [s] (Long/parseLong s 10)))
-nil
-user> (->long "10") ;; 文字列を強制的に Long へと変換出来るようになった
-10
-user> (extend-protocol CoerceLong ;; nil が渡されたら 0 になって欲しいので nil を拡張
-        nil
-        (->long [x] 0))
-nil
-user> (->long nil)
-0
-user> (defrecord Money [value currency] ;; 自分で作った Money というレコード型にも適用出来る
-        CoerceLong
-        (->long [self] value))
-user.Money
-user> (->long (Money. 10 "jpy"))
-10
+.. sourcecode:: clojure
+
+  user> (defprotocol CoerceLong
+          (->long [x] "Long に強制変換するプロトコル"))
+  CoerceLong
+  user> (extend-protocol CoerceLong ;; 既存の Java のクラスをプロトコルで拡張してみる
+          java.lang.String
+          (->long [s] (Long/parseLong s 10)))
+  nil
+  user> (->long "10") ;; 文字列を強制的に Long へと変換出来るようになった
+  10
+  user> (extend-protocol CoerceLong ;; nil が渡されたら 0 になって欲しいので nil を拡張
+          nil
+          (->long [x] 0))
+  nil
+  user> (->long nil)
+  0
+  user> (defrecord Money [value currency] ;; 自分で作った Money というレコード型にも適用出来る
+          CoerceLong
+          (->long [self] value))
+  user.Money
+  user> (->long (Money. 10 "jpy"))
+  10
