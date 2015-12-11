@@ -69,7 +69,7 @@
 License
 =======
 
-Copyright (c) 2015 Ayato Nishimura. Distributed under the BSD 3-Clause License.
+Copyright (c) 2015 JapanClojurians. Distributed under the BSD 3-Clause License.
 
 Clojure Animation Tower of Hanoi (Original Project)
 ---------------------------------------------------

@@ -194,3 +194,8 @@
            res/html))))
 
 セッションに何かを追加したい場合にはレスポンスマップの ``:session`` キーに何か値を入れることで使うことが出来ます。
+
+License
+=======
+
+Simple TODO App by JapanClojurians is licensed under a `Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_
