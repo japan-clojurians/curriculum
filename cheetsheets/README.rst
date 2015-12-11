@@ -2,6 +2,7 @@
  チートシート目次
 ==================
 
+* `リテラルについて <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/literals.rst>`_
 * `コメントの書き方について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/comment.rst>`_
 * `型について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/types.rst>`_
 * `真らしいものについて <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/truthiness.rst>`_
