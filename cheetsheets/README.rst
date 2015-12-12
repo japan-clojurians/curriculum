@@ -14,7 +14,7 @@
 * `繰り返し処理について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/iteration.rst>`_
 * `条件分岐について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/conditional.rst>`_
 * `分配束縛について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/destructuring.rst>`_
-* `高階関数について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/function.rst>`_
+* `高階関数について <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/higher-order-function.rst>`_
 * `遅延シーケンスについて <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/lazyseq.rst>`_
 * `ネームスペースについて <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/namespace.rst>`_
 * `ポリモーフィズムについて <https://github.com/japan-clojurians/curriculum/blob/master/cheetsheets/clojure/polymorphism.rst>`_
