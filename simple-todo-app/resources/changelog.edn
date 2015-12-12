@@ -17,6 +17,6 @@
   ;;     {:table-name :member
   ;;      :columns
   ;;      [{:column {:name :id :type :int :auto-increment true :constraints {:primary-key? true :nullable? false}}}
-  ;;       {:column {:name :login-name :type :varchar :constraints {:nullable? false}}}
+  ;;       {:column {:name :login_name :type :varchar :constraints {:nullable? false}}}
   ;;       {:column {:name :password :type :varchar :constraints {:nullable? false}}}]}}]}}
   ]}
