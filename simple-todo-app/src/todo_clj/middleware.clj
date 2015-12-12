@@ -23,6 +23,6 @@
   [handler]
   (-> handler
       http-response/wrap-http-response
-      (defaults/wrap-defaults #'defaults/site-defaults)
+      (defaults/wrap-defaults defaults/site-defaults)
       trailing-slash/wrap-trailing-slash
       (wrap wrap-dev (:dev env))))
